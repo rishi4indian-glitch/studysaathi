@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudySaathi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f3ff;
+      color: #20234a;
+      text-align: center;
+    }
+    header {
+      background: #5145cd;
+      color: white;
+      padding: 25px;
+    }
+    main {
+      max-width: 650px;
+      margin: 35px auto;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      margin: 18px 0;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px #00000010;
+    }
+    button {
+      background: #5145cd;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      cursor: pointer;
+    }
+    select, input {
+      padding: 10px;
+      margin: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 StudySaathi</h1>
+    <p>Your learning companion</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Welcome, Student! 👋</h2>
+      <p>Learn something new every day.</p>
+      <label for="class">Choose your class:</label>
+      <select id="class">
+        <option>Class 6</option>
+        <option>Class 7</option>
+        <option>Class 8</option>
+        <option>Class 9</option>
+        <option>Class 10</option>
+        <option>Class 11</option>
+        <option>Class 12</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h2>📝 Study Notes</h2>
+      <p>Mathematics: An equation has two equal sides.</p>
+      <p>Science: Plants use sunlight to make food.</p>
+      <button onclick="alert('More notes coming soon!')">
+        Explore Notes
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>💡 Quick Doubt Helper</h2>
+      <input id="question" placeholder="Type a question">
+      <button onclick="answer()">Ask</button>
+      <p id="answer"></p>
+    </div>
+  </main>
+
+  <script>
+    function answer() {
+      const q = document.getElementById("question").value.toLowerCase();
+      let reply = "Try asking about maths or photosynthesis.";
+
+      if (q.includes("photosynthesis")) {
+        reply = "Plants use sunlight, water and carbon dioxide to make food.";
+      } else if (q.includes("2+2")) {
+        reply = "2 + 2 = 4";
+      } else if (q.includes("equation")) {
+        reply = "An equation says that two expressions are equal.";
+      }
+
+      document.getElementById("answer").textContent = reply;
+    }
+  </script>
+</body>
+</html>
